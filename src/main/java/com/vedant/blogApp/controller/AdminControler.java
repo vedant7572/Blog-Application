@@ -42,5 +42,4 @@ public class AdminControler {
         userService.saveAdmin(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-    //test push
 }
