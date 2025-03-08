@@ -15,38 +15,38 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepo;
+    private UserRepository userRepository;
 
     private static final PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
     public void saveNewUser(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRoles(Arrays.asList("USER"));
-        userRepo.save(user);
+        userRepository.save(user);
     }
     public void saveUser(User user){
-        userRepo.save(user);
+        userRepository.save(user);
     }
 
     public List<User> getAll(){
-        return userRepo.findAll();
+        return userRepository.findAll();
     }
 
     public User findById(ObjectId id){
-        return userRepo.findById(id).orElse(null);
+        return userRepository.findById(id).orElse(null);
     }
 
     public void deleteById(ObjectId id){
-        userRepo.deleteById(id);
+        userRepository.deleteById(id);
 
     }
 
     public User findByUserName(String userName){
-        return userRepo.findByUserName(userName);
+        return userRepository.findByUserName(userName);
     }
 
     public void saveAdmin(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRoles(Arrays.asList("USER","ADMIN"));
-        userRepo.save(user);
+        userRepository.save(user);
     }
 }

@@ -27,7 +27,6 @@ public class JournalEntryController {
     @Autowired
     private UserService userService;
 
-//
     //this will be put in the admin side
 
     @GetMapping
