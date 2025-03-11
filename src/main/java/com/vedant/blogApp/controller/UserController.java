@@ -54,11 +54,11 @@ public class UserController  {
         String greeting="";
         double temp = 0;
         if(weatherResponse!=null){
-            greeting="Weather feels like "+ weatherResponse.getCurrent().getCondition().getText();
+            greeting="\nWeather feels like "+ weatherResponse.getCurrent().getCondition().getText();
             temp=weatherResponse.getCurrent().getTemp_c();
         }
 
-        return new ResponseEntity<>("hello "+ authentication.getName() + "\nWeather is " + greeting + " and temperature is "+ temp,HttpStatus.OK);
+        return new ResponseEntity<>("hello "+ authentication.getName() + greeting + " and temperature is "+ temp,HttpStatus.OK);
     }
 
 }
