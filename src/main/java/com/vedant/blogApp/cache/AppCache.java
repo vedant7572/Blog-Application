@@ -17,6 +17,7 @@ public class AppCache {
     @Autowired
     private ConfigJournalRepository configJournalRepository;
 
+    //fetches the api from the database and stores it in the cache which is used by the WeatherService
 
     @PostConstruct
     void init(){

@@ -17,7 +17,7 @@ public class WeatherService {
     private String apiKey;
     @Autowired
     AppCache appCache;
-
+    //stored api url in the cache is used here
     @Autowired
     private RestTemplate restTemplate;
 
